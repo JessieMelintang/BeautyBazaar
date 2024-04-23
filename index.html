@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Beauty Bazaar</title>
+  
 </head>
 
 <body>
@@ -22,7 +23,7 @@
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#home">Home</a></li>
+        <li><a href="#home">home</a></li>
         <li><a href="#sales&discount">sales & discount</a></li>
         <li><a href="skincare.html">skincare</a>
           <ul class="dropdown">
@@ -41,20 +42,23 @@
         <li><a href="#aboutus">about us</a></li>
       </ul>
       <div class="nav__btn">
-        <button class="btn"><i class="ri-search-line"></i></button>
-        <button class="btn"><i class="ri-shopping-cart-2-line"></i> Add to Cart</button>
+        <button class="btn" onclick="openPopup()">Add to Cart</button>
+          <div class="popup" id="popup">
+            <p>Added to cart!</p>
+            <button type="button" onclick="closePopup()">OK</button>
       </div>
     </div>
   </nav>
 
   <header class="header" id="home">
     <div class="section__container header__container">
-      <p class="section__subheader">ABOUT US</p>
       <h1>Bringing Beauty<br>To Your Doorstep</h1>
-      <button class="btn">Shop Now</button>
+
+
+    
     </div>
     <div class="header__image">
-      <img src="images/header.png" alt="header">
+      <img src="images/header.png" alt="header" style="width:auto,">
     </div>
   </header>
 
@@ -83,9 +87,13 @@
         </div>
         <div class="special__footer">
           <p class="price">RM 60.00</p>
-          <button class="btn">Add to Cart</button>
+              <button class="btn" onclick="openPopup()">Add to Cart</button>
+              <div class="popup" id="popup">
+                <p>Added to cart!</p>
+                <button type="button" onclick="closePopup()">OK</button>
         </div>
       </div>
+        
       <div class="special__card">
         <img src="images/makeup.png" alt="makeup">
         <h4>Wardah Colorfit Ready to Move</h4>
@@ -102,7 +110,10 @@
         </div>
         <div class="special__footer">
           <p class="price">RM 120.00</p>
-          <button class="btn">Add to Cart</button>
+              <button class="btn" onclick="openPopup()">Add to Cart</button>
+              <div class="popup" id="popup">
+                <p>Added to cart!</p>
+                <button type="button" onclick="closePopup()">OK</button>
         </div>
       </div>
       <div class="special__card">
@@ -122,11 +133,27 @@
         </div>
         <div class="special__footer">
           <p class="price">RM 45.00</p>
-          <button class="btn">Add to Cart</button>
+              <button class="btn" onclick="openPopup()">Add to Cart</button>
+              <div class="popup" id="popup">
+                <p>Added to cart!</p>
+                <button type="button" onclick="closePopup()">OK</button>
         </div>
       </div>
     </div>
-  </section>
+    </div>
+  </section>      
+
+  <script>
+    let popup = document.getElementById("popup");
+
+    function openPopup() {
+      popup.classList.add("open-popup");
+    }
+
+    function closePopup() {
+      popup.classList.remove("open-popup");
+    }
+  </script>
 
   <footer class="footer" id="aboutus">>
     <div class="section__container footer__container">
