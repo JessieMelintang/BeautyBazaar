@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Beauty Bazaar</title>
 </head>
 
@@ -22,7 +22,7 @@
         </div>
       </div>
       <ul class="nav__links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">home</a></li>
         <li><a href="index.html">sales & discount</a></li>
         <li><a href="skincare.html">skincare</a>
           <ul class="dropdown">
@@ -41,8 +41,10 @@
         <li><a href="index.html">about us</a></li>
       </ul>
       <div class="nav__btn">
-        <button class="btn"><i class="ri-search-line"></i></button>
-        <button class="btn"><i class="ri-shopping-cart-2-line"></i></button>
+        <button class="btn" onclick="openPopup()">Add to Cart</button>
+          <div class="popup" id="popup">
+            <p>Added to cart!</p>
+            <button type="button" onclick="closePopup()">OK</button>
       </div>
     </div>
   </nav>
@@ -111,7 +113,11 @@
               <p>Suitable for normal oily skin.</p>
             </div>
             <h3>RM 21.70<span></span></h3>
-            <button class="btn"><i class="ri-shopping-cart-2-line"></i></button>
+            <button class="btn" onclick="openPopup()">
+              <i class="ri-shopping-cart-2-line"></i></button>  
+              <div class="popup" id="popup">
+                <p>Added to cart!</p>
+                <button type="button" onclick="closePopup()">OK</button>
           </div>
         </div>
       </div>
@@ -191,7 +197,12 @@
               <p>Day moisturizer with 27 ingredients that contains niacinamide and SPF</p>
             </div>
             <h3>RM 31.60<span></span></h3>
-            <button class="btn"><i class="ri-shopping-cart-2-line"></i></button>
+            <button class="btn" onclick="openPopup()">
+              <i class="ri-shopping-cart-2-line"></i>
+            </button>  
+              <div class="popup" id="popup">
+                <p>Added to cart!</p>
+                <button type="button" onclick="closePopup()">OK</button>
           </div>
         </div>
       </div>
@@ -253,13 +264,30 @@
               </p>
             </div>
             <h3>RM 20.50<span></span></h3>
-            <button class="btn"><i class="ri-shopping-cart-2-line"></i></button>
+            <button class="btn" onclick="openPopup()">
+              <i class="ri-shopping-cart-2-line"></i>
+            </button>  
+              <div class="popup" id="popup">
+                <p>Added to cart!</p>
+                <button type="button" onclick="closePopup()">OK</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <script>
+    let popup = document.getElementById("popup");
+
+    function openPopup() {
+      popup.classList.add("open-popup");
+    }
+
+    function closePopup() {
+      popup.classList.remove("open-popup");
+    }
+  </script>
+  
   <footer class="footer" id="aboutus">>
     <div class="footer__bar">
       Copyright © 2024 Beauty Bazaar. All rights reserved.
